@@ -51,8 +51,7 @@ def operation():
 
 ======================================
 Digite o número da operação desejada
->
-        """
+> """
         operation = input(menu)
         if operation == '1':
             depositar(float(input("Digite o valor: ")))
