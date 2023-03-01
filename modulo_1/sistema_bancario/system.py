@@ -16,7 +16,7 @@ def depositar(valor):
         print('valor inválido')
 
 def sacar(valor):
-    if valor <= data['saldo'] and data['saques'] < 3:
+    if valor <= data['saldo'] and data['saques'] < 3 and valor <= 500:
         print("Saque realizado com sucesso")
         data['saldo']    -= valor
         data['extrato'] += f"{data['opcode']}. Saque no valor de R$ {valor:.2f}\n"
@@ -24,6 +24,8 @@ def sacar(valor):
         data['saques']   += 1
     elif valor > data['saldo']: 
         print('Não é possível completar a operação por falta de saldo na conta')
+    elif valor > 500:
+        print("Valor Inválido")
     else:
         print("Limite de saques atingido")
         
